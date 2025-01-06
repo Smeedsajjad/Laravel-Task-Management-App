@@ -83,7 +83,7 @@
         </section>
 
         <section id="inverse-rounded-edge" class="w-full bg-black h-screen flex flex-col justify-start items-center">
-            <div class="flex flex-col items-center text-center justify-center relative top-24 lg:top-44 mb-10">
+            <div class="flex flex-col items-center text-center justify-center mt-44 mb-10">
                 <h1 class="font-bold text-white text-3xl lg:text-5xl lg:w-4/5" style="line-height: 1.2;">
                     We can help manage your work more efficiently
                 </h1>
@@ -95,10 +95,10 @@
             <div class="flex flex-wrap relative lg:flex-nowrap items-center justify-center lg:justify-between lg:p-16">
                 <!-- Left Content (Image) -->
                 <div class="w-full lg:w-1/2 flex justify-center lg:justify-start mt-8 lg:mt-0">
-                    <img src="{{ asset('images/h2.png') }}" data-aos="fade-right" alt="Organized Notes" class="w-full lg:w-4/5 max-w-xl">
+                    <img src="{{ asset('images/h2.png') }}" data-aos="fade-right" alt="Organized Notes" class="w-full max-w-xl">
                 </div>
                 <!-- Right Content (Cards) -->
-                <div class="w-full lg:w-1/2 flex flex-col justify-center items-center lg:items-start text-center lg:text-left mt-8 lg:mt-0 ">
+                <div class="w-full lg:w-1/2  flex-col justify-center items-center lg:items-start text-center lg:text-left mt-8 lg:mt-0 hidden lg:flex">
                     <div class="text-white py-10">
                         <div class="max-w-4xl mx-auto space-y-8" data-aos="fade-left">
                             <!-- Card 1 -->
@@ -159,15 +159,16 @@
                         </div>
                     </div>
                 </div>
+
             </div>
         </section>
 
 
         <section
-            class="w-full h-4/6 flex flex-wrap lg:flex-nowrap items-center justify-center lg:justify-between p-8 lg:p-40 lg:py-32">
+            class="w-full h-4/6 flex flex-wrap lg:flex-nowrap items-center justify-center lg:justify-between p-8 lg:p-16 lg:py-32">
             <!-- Left Content -->
             <div
-                class="w-full pl-28 lg:w-1/2 flex flex-col justify-center items-center lg:items-start text-center lg:text-left leading-5">
+                class="w-full lg:w-1/2 flex flex-col justify-center items-center lg:items-start text-center lg:text-left leading-5">
                 <h1 class="font-bold text-3xl lg:text-5xl lg:w-4/5" style="line-height: 1.2;">
                     Find your <span class="text-gray-500">productivity</span> happy place
                 </h1>
@@ -185,30 +186,29 @@
             <!-- Right Content -->
             <div class="w-full lg:w-1/2 flex justify-center mt-8 lg:mt-0">
                 <img src="{{ asset('images/h3.webp') }}" alt="Organized Notes"
-                    class="w-full lg:w-4/5 rounded-full">
+                    class="w-full rounded-full">
             </div>
         </section>
 
-        <section class="w-full h-full mb-20 p-8 px-64 2xl:px-24">
+        <section class="w-full h-full mb-20 p-8 px-4 sm:px-8 md:px-16 lg:px-32 xl:px-64 2xl:px-24">
             <div class="flex flex-col justify-center items-center py-10">
-                <h1 class="text-5xl font-bold text-black">Testimonials</h1>
-                <p class="text-gray-600 pt-6 font-semibold">Meet our client to see how we can help with our services
-                    from feedback
-                    below!</p>
+                <h1 class="text-2xl sm:text-3xl lg:text-5xl font-bold text-black">Testimonials</h1>
+                <p class="text-gray-600 pt-6 font-semibold text-sm sm:text-base lg:text-xl text-center md:text-left">
+                    Meet our client to see how we can help with our services from feedback below!
+                </p>
             </div>
 
             <swiper-container class="mySwiper" navigation="true">
                 <swiper-slide>
-                    <div class="swiper-slide flex items-center bg-gray-900 text-white p-10 rounded-lg">
-                        <div class="p-6">
+                    <div class="swiper-slide flex flex-col md:flex-row items-center bg-gray-900 text-white p-8 md:p-10 rounded-lg">
+                        <div class="p-6 mb-4 md:mb-0">
                             <img src="https://images.unsplash.com/photo-1562788869-4ed32648eb72?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTAwfHxtYW5hZ2VyfGVufDB8MHwwfHx8MA%3D%3D"
-                                alt="Client Image" class="rounded-lg" />
+                                alt="Client Image" class="rounded-lg w-full max-w-xs md:max-w-sm lg:max-w-md" />
                         </div>
-                        <div class="w-3/4 pl-10">
-                            <i class="ri-double-quotes-l text-blue-500 text-6xl"></i>
-                            <p class="mt-4 text-5xl font-semibold">
-                                This platform revolutionized the way my team collaborates. The seamless task management
-                                features are a game changer!
+                        <div class="w-full md:w-3/4 pl-0 md:pl-10">
+                            <i class="ri-double-quotes-l text-blue-500 text-4xl sm:text-5xl lg:text-6xl"></i>
+                            <p class="mt-4 text-xl sm:text-2xl lg:text-3xl font-semibold">
+                                This platform revolutionized the way my team collaborates. The seamless task management features are a game changer!
                             </p>
                             <div class="mt-4">
                                 <span class="text-blue-400 font-bold">John Doe</span> /
@@ -218,16 +218,15 @@
                     </div>
                 </swiper-slide>
                 <swiper-slide>
-                    <div class="swiper-slide flex items-center bg-gray-900 text-white p-10 rounded-lg">
-                        <div class="p-6">
+                    <div class="swiper-slide flex flex-col md:flex-row items-center bg-gray-900 text-white p-8 md:p-10 rounded-lg">
+                        <div class="p-6 mb-4 md:mb-0">
                             <img src="https://plus.unsplash.com/premium_photo-1661266851970-7f2bf75fdc40?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjF8fG1hbmFnZXJ8ZW58MHwwfDB8fHww"
-                                alt="Client Image" class="rounded-lg" />
+                                alt="Client Image" class="rounded-lg w-full max-w-xs md:max-w-sm lg:max-w-md" />
                         </div>
-                        <div class="w-3/4 pl-10">
-                            <i class="ri-double-quotes-l text-blue-500 text-6xl"></i>
-                            <p class="mt-4 text-5xl font-semibold">
-                                The calendar integration has made scheduling so much easier for our team. Highly
-                                recommend!
+                        <div class="w-full md:w-3/4 pl-0 md:pl-10">
+                            <i class="ri-double-quotes-l text-blue-500 text-4xl sm:text-5xl lg:text-6xl"></i>
+                            <p class="mt-4 text-xl sm:text-2xl lg:text-3xl font-semibold">
+                                The calendar integration has made scheduling so much easier for our team. Highly recommend!
                             </p>
                             <div class="mt-4">
                                 <span class="text-blue-500 font-bold">Emily Smith</span> /
@@ -237,16 +236,15 @@
                     </div>
                 </swiper-slide>
                 <swiper-slide>
-                    <div class="swiper-slide flex items-center bg-gray-900 text-white p-10 rounded-lg">
-                        <div class="p-6">
+                    <div class="swiper-slide flex flex-col md:flex-row items-center bg-gray-900 text-white p-8 md:p-10 rounded-lg">
+                        <div class="p-6 mb-4 md:mb-0">
                             <img src="https://images.unsplash.com/photo-1637684666451-423047d6bf5e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fG1hbmFnZXJ8ZW58MHwwfDB8fHww"
-                                alt="Client Image" class="rounded-lg" />
+                                alt="Client Image" class="rounded-lg w-full max-w-xs md:max-w-sm lg:max-w-md" />
                         </div>
-                        <div class="w-3/4 pl-10">
-                            <i class="ri-double-quotes-l text-blue-500 text-6xl"></i>
-                            <p class="mt-4 text-5xl font-semibold">
-                                The ability to prioritize tasks and visualize progress has drastically improved our
-                                efficiency.
+                        <div class="w-full md:w-3/4 pl-0 md:pl-10">
+                            <i class="ri-double-quotes-l text-blue-500 text-4xl sm:text-5xl lg:text-6xl"></i>
+                            <p class="mt-4 text-xl sm:text-2xl lg:text-3xl font-semibold">
+                                The ability to prioritize tasks and visualize progress has drastically improved our efficiency.
                             </p>
                             <div class="mt-4">
                                 <span class="text-blue-400 font-bold">Michael Brown</span> /
@@ -256,35 +254,28 @@
                     </div>
                 </swiper-slide>
             </swiper-container>
-
         </section>
 
-        <section
-            class="w-full h-4/6 flex flex-wrap lg:flex-nowrap items-center justify-center lg:justify-between p-8 lg:p-40 lg:py-16 2xl:px-24">
+
+        <section class="w-full h-4/6 flex flex-wrap lg:flex-nowrap items-center justify-center lg:justify-between p-8 lg:p-20 xl:p-32 2xl:px-24">
             <!-- Left Content -->
-            <div data-aos="fade-down-right"
-                class="w-full pl-28 lg:w-1/2 flex flex-col justify-center items-center lg:items-start text-center lg:text-left leading-5">
-                <h1 class="font-bold text-3xl lg:text-5xl lg:w-4/5" style="line-height: 1.2;">
+            <div data-aos="fade-down-right" class="w-full pl-8 lg:pl-28 lg:w-1/2 flex flex-col justify-center items-center lg:items-start text-center lg:text-left leading-5">
+                <h1 class="font-bold text-2xl sm:text-3xl lg:text-5xl lg:w-4/5" style="line-height: 1.2;">
                     Straight into your existing <span class="text-gray-500">workflows</span>
                 </h1>
-                <p class="text-gray-600 font-semibold lg:w-4/5 mt-5">
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequuntur iure, veritatis molestias
-                    optio ratione molestiae et quidem quasi voluptas excepturi eligendi animi ea, iusto maiores deleniti
-                    architecto explicabo similique saepe.
+                <p class="text-gray-600 font-semibold text-base sm:text-lg lg:text-xl lg:w-4/5 mt-5">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequuntur iure, veritatis molestias optio ratione molestiae et quidem quasi voluptas excepturi eligendi animi ea, iusto maiores deleniti architecto explicabo similique saepe.
                 </p>
-                <a class="py-2 px-6 bg-blue-500 hover:bg-blue-600 text-base border-2 border-blue-500 text-white font-bold rounded-full transition duration-200 mt-5"
-                    href="#">
+                <a class="py-2 px-6 bg-blue-500 hover:bg-blue-600 text-sm sm:text-base border-2 border-blue-500 text-white font-bold rounded-full transition duration-200 mt-5" href="#">
                     Get Started
                 </a>
             </div>
             <!-- Right Content -->
             <div class="w-full lg:w-1/2 flex justify-center mt-8 lg:mt-0">
-                <img data-aos="fade-down-left"
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGZsvXsFOIaiygL3Jqbn0zQRE659LTFP9IwQ&s"
-                    alt="Organized Notes" class="w-[375px] h-[375px] object-cover" />
+                <img data-aos="fade-down-left" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGZsvXsFOIaiygL3Jqbn0zQRE659LTFP9IwQ&s" alt="Organized Notes" class="w-[250px] sm:w-[300px] md:w-[375px] lg:w-[450px] xl:w-[500px] h-auto object-cover" />
             </div>
-
         </section>
+
 
     <x-footer />
 
