@@ -7,6 +7,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
         integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+          {{-- remix icons --}}
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
     @vite(['resources/css/login.css'])
     <!-- LINEARICONS -->
     <link rel="stylesheet" href="fonts/linearicons/style.css">
@@ -17,27 +19,27 @@
     <div class="wrapper">
         <div class="inner">
             <img src="images/image-1.png" alt="" class="image-1">
-            <form action="data" method="POST">
+            <form action="{{route('registerSave')}}" method="POST">
                 @csrf
                 <h3>New Account?</h3>
                 <div class="form-holder">
                     <input type="text" name="name" class="form-control" placeholder="Username">
-                    <span class="lnr lnr-user">@error('name'){{$message}}@enderror</span>
+                    <span class="lnr lnr-user">@error('name')<i class="ri-error-warning-line"></i> {{$message}}@enderror</span>
                 </div>
                 <div class="form-holder">
                     <input type="text" name="email" class="form-control" placeholder="Email">
-                    <span class="lnr lnr-envelope">@error('email'){{$message}}@enderror</span>
+                    <span class="lnr lnr-envelope">@error('email')<i class="ri-error-warning-line"></i> {{$message}}@enderror</span>
                 </div>
                 <div class="form-holder">
                     <input type="password" name="password" class="form-control" placeholder="Password">
-                    <span class="lnr lnr-lock">@error('password'){{$message}}@enderror</span>
+                    <span class="lnr lnr-lock">@error('password')<i class="ri-error-warning-line"></i> {{$message}}@enderror</span>
                 </div>
                 <div class="form-holder">
                     <input type="password" name="password_confirmation" class="form-control" placeholder="Confirm Password">
-                    <span class="lnr lnr-lock">@error('password_confirmation'){{$message}}@enderror</span>
+                    <span class="lnr lnr-lock">@error('password_confirmation')<i class="ri-error-warning-line"></i> {{$message}}@enderror</span>
                 </div>
-                <button class="button google">
-                    <svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid" viewBox="0 0 256 262">
+                <a href="{{route('login.google')}}" class="button google">
+                    <svg height="24px" width="24px" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid" viewBox="0 0 256 262">
                         <path fill="#4285F4"
                             d="M255.878 133.451c0-10.734-.871-18.567-2.756-26.69H130.55v48.448h71.947c-1.45 12.04-9.283 30.172-26.69 42.356l-.244 1.622 38.755 30.023 2.685.268c24.659-22.774 38.875-56.282 38.875-96.027">
                         </path>
@@ -52,7 +54,7 @@
                         </path>
                     </svg>
                     Continue with Google
-                </button>
+                </a>
                 <button type="submit" class="my-btn">
                     <span>Register</span>
                 </button>

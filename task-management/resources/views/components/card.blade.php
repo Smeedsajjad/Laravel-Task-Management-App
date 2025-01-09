@@ -9,7 +9,6 @@
         <!-- Content -->
         <div class="ml-4">
             <h2 class="text-xl font-bold text-white">{{ $title }}</h2>
-            <p class="text-gray-100 mt-2">{{ $description }}</p>
         </div>
     </div>
 </div>

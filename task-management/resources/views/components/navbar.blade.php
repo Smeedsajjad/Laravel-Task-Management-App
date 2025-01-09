@@ -1,7 +1,7 @@
 @vite(['resources/js/navbar.js'])
 <div>
     <nav class="relative px-4 py-4 flex justify-between items-center bg-white">
-        <a class="text-3xl font-bold leading-none" href="/">
+        <a class="text-3xl font-bold leading-none" href="/index">
             <img class="h-10"
                 src="https://tailwindcss.com/_next/static/media/tailwindcss-mark.3c5441fc7a190fb1800d4a5c7f07ba4b1345a9c8.svg"
                 alt="">
@@ -49,10 +49,38 @@
             </li>
             <li><a class="text-base text-gray-900 hover:text-blue-500 font-semibold" href="#">Contact</a></li>
         </ul>
-        <a class="hidden lg:inline-block lg:ml-auto lg:mr-3 py-2 px-6 border-solid border-2 border-blue-500 hover:bg-gray-100 text-base text-gray-900 font-bold  rounded-full transition duration-200"
-            href="/login">LogIn</a>
-        <a class="hidden lg:inline-block py-2 px-6 bg-blue-500 hover:bg-blue-600 text-base border-solid border-2 border-blue-500 text-white font-bold rounded-full transition duration-200"
-            href="/register">Sign up</a>
+        @if (Auth::check())
+            <button id="dropdownAvatarNameButton" data-dropdown-toggle="dropdownAvatarName"
+                class="flex items-center text-sm pe-1 font-medium text-gray-900 rounded-full hover:text-blue-600 dark:focus:ring-gray-700"
+                type="button">
+                {{-- <span class="sr-only">Open user menu</span> --}}
+                <img class="w-8 h-8 me-2 rounded-full" src="images/profile.png" alt="user photo">
+                <svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                    viewBox="0 0 10 6">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="m1 1 4 4 4-4" />
+                </svg>
+            </button>
+            <!-- Dropdown menu -->
+            <div id="dropdownAvatarName" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44">
+                <div class="px-4 py-3 text-sm text-gray-900">
+                    <div class="font-medium ">{{ Auth::user()->name }} </div>
+                    <div class="truncate">({{ Auth::user()->email }})</div>
+                </div>
+                </ul>
+                <div class="py-2">
+                    <a href="/logout" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">LogOut</a>
+                </div>
+            </div>
+            {{-- <a class="hidden lg:inline-block lg:ml-auto lg:mr-3 py-2 px-6 border-solid border-2 border-blue-500 hover:bg-gray-100 text-base text-gray-900 font-bold rounded-full transition duration-200"
+                href="/logout">Logout</a> --}}
+        @else
+            <a class="hidden lg:inline-block lg:ml-auto lg:mr-3 py-2 px-6 border-solid border-2 border-blue-500 hover:bg-gray-100 text-base text-gray-900 font-bold rounded-full transition duration-200"
+                href="/login">LogIn</a>
+            <a class="hidden lg:inline-block py-2 px-6 bg-blue-500 hover:bg-blue-600 text-base border-solid border-2 border-blue-500 text-white font-bold rounded-full transition duration-200"
+                href="/register">Sign up</a>
+        @endif
+
     </nav>
     <div class="navbar-menu relative z-50 hidden transition-all duration-300 ease-in-out">
         <div class="navbar-backdrop fixed inset-0 bg-gray-800 opacity-25"></div>
@@ -68,7 +96,8 @@
                 <button class="navbar-close">
                     <svg class="h-6 w-6 text-gray-400 cursor-pointer hover:text-gray-500"
                         xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M6 18L18 6M6 6l12 12">
                         </path>
                     </svg>
                 </button>
@@ -99,10 +128,15 @@
             </div>
             <div class="mt-auto">
                 <div class="pt-6">
-                    <a class="block px-4 py-3 mb-3  text-base text-center font-semibold border-solid border-2 border-blue-500 hover:bg-gray-100 rounded-full"
-                        href="/login">LogIn</a>
-                    <a class="block px-4 py-3 mb-2 text-base text-center text-white font-semibold bg-blue-500 hover:bg-blue-600 rounded-full"
-                        href="#">SignUp</a>
+                    @if (Auth::check())
+                        <a class="block px-4 py-3 mb-3  text-base text-center font-semibold border-solid border-2 border-blue-500 hover:bg-gray-100 rounded-full"
+                            href="/logout">Logout</a>
+                    @else
+                        <a class="block px-4 py-3 mb-3  text-base text-center font-semibold border-solid border-2 border-blue-500 hover:bg-gray-100 rounded-full"
+                            href="/login">LogIn</a>
+                        <a class="block px-4 py-3 mb-2 text-base text-center text-white font-semibold bg-blue-500 hover:bg-blue-600 rounded-full"
+                            href="#">SignUp</a>
+                    @endif
                 </div>
                 <p class="my-4 text-xs text-center text-gray-400">
                     <span>Copyright © 2024</span>

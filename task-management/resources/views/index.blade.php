@@ -161,7 +161,7 @@
 
     <x-navbar />
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 p-10">
-        <x-card title="Task 1" description="This is a description for task 1." icon="task-line" link="/task/1" />
+        <x-card title="{{ Auth::user()->name }}" description="This is a description for task 1." icon="task-line" link="/task/1" />
 
         <x-card title="Task 2" description="This is a description for task 2." icon="folder-line" link="/task/2" />
 

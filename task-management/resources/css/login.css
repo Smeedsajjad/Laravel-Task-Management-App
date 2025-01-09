@@ -81,11 +81,11 @@
     position: relative;
     margin-bottom: 21px; }
     .form-holder span {
-      position: absolute;
+      /* position: absolute; */
       left: 0;
       top: 50%;
       transform: translateX(100%) translateY(-50%);
-      font-size: 15px;
+      font-size: 14px;
       color: red; }
       .form-holder span.lnr-lock {
         left: 2px; }
@@ -193,7 +193,7 @@
     .wrapper {
       background: none; } }
 
-button.google {
+a.google {
     max-width: 100%;
     width: 100%;
     display: flex;
@@ -214,10 +214,10 @@ button.google {
     margin-top: 40px;
   }
 
-  .button svg {
+  .a svg {
     height: 24px;
   }
 
-  button:hover {
+  a:hover {
     transform: scale(1.02);
   }
