@@ -13,7 +13,14 @@ return new class extends Migration
     {
         Schema::create('tasks', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('user_id');
+            $table->string('title');
+            $table->text('description')->nullable();
+            $table->enum('status', ['Pending', 'In Progress', 'Completed'])->default('Pending');
             $table->timestamps();
+
+            // Foreign key constraint for user_id
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 
