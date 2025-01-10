@@ -1,3 +1,107 @@
+# Laravel Dark Mode Toggle with Tailwind CSS
+
+This project demonstrates how to implement a dark mode toggle in a Laravel application using Tailwind CSS. The theme preference is stored in `localStorage`, so the selected theme persists across page reloads.
+
+## Features
+- Dark mode toggle using a button.
+- Theme preference is saved in `localStorage`.
+- Tailwind CSS dark mode utilities are used for styling.
+- Seamless transition between light and dark modes.
+
+## Installation
+
+Follow the steps below to set up this project on your local machine.
+
+### Prerequisites
+
+Make sure you have the following installed:
+- [PHP](https://www.php.net/downloads.php) (Version 7.3 or higher)
+- [Composer](https://getcomposer.org/) (Dependency Manager for PHP)
+- [Node.js](https://nodejs.org/) (For compiling assets)
+- [Laravel](https://laravel.com/docs) (If not already installed)
+
+### Clone the Repository
+
+Clone this repository to your local machine using the following command:
+
+```bash
+git clone https://github.com/your-username/laravel-dark-mode-toggle.git
+cd laravel-dark-mode-toggle
+
+Install Dependencies
+Run the following commands to install PHP and JavaScript dependencies:
+
+bash
+Copy code
+# Install PHP dependencies
+composer install
+
+# Install JavaScript dependencies
+npm install
+Set Up Environment File
+Make a copy of the .env.example file and rename it to .env. Then, configure your environment settings, such as the database connection.
+
+bash
+Copy code
+cp .env.example .env
+Generate Application Key
+Generate the Laravel application key:
+
+bash
+Copy code
+php artisan key:generate
+Run the Development Server
+Start the Laravel development server:
+
+bash
+Copy code
+php artisan serve
+By default, the application will be accessible at http://localhost:8000.
+
+Compile Assets
+You need to compile the frontend assets using npm:
+
+bash
+Copy code
+npm run dev
+Or, to build for production:
+
+bash
+Copy code
+npm run build
+Dark Mode Toggle
+The dark mode toggle is implemented using Tailwind CSS's dark mode class. The theme preference is stored in the browser's localStorage, so the selected theme will persist between page reloads.
+
+How it Works
+When the page loads, it checks the user's theme preference stored in localStorage.
+If the theme is dark, it adds the dark class to the <html> tag, which applies Tailwind's dark mode styles.
+When the toggle button is clicked, the dark class is toggled on the <html> tag, and the new theme preference is saved in localStorage.
+Example Usage
+In the Blade view files (e.g., resources/views/layouts/app.blade.php), you can use Tailwind's dark mode utilities:
+
+html
+Copy code
+<div class="bg-white dark:bg-gray-800 text-black dark:text-white">
+    <p>This text is black in light mode and white in dark mode.</p>
+</div>
+This will switch between light and dark background and text colors based on the selected theme.
+
+Contributing
+If you'd like to contribute to this project, feel free to fork the repository, create a new branch, and submit a pull request with your changes.
+
+License
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+Acknowledgments
+Tailwind CSS for making it easy to implement responsive and customizable designs.
+Laravel for being a fantastic PHP framework.
+Dark Mode for a smooth user experience.
+sql
+Copy code
+
+This `README.md` provides clear instructions to set up and use your Laravel project with dark 
+
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
