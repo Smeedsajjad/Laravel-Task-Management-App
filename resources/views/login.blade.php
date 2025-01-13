@@ -12,7 +12,7 @@
     @vite(['resources/css/login.css'])
     <!-- LINEARICONS -->
     <link rel="stylesheet" href="fonts/linearicons/style.css">
-    <title>Login</title>
+    <title>Login - TaskFlux</title>
 </head>
 
 <body>

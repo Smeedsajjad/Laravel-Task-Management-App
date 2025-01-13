@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
-    <title>Dashboard</title>
+    <title>Dashboard - TaskFlux</title>
 </head>
 
 <body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100">
@@ -346,27 +346,20 @@
         });
 
         document.addEventListener('DOMContentLoaded', function() {
-            const editButtons = document.querySelectorAll('[data-modal-target="edit-modal"]');
+            const editButtons = document.querySelectorAll('[data-modal-toggle="edit-modal"]');
             const editForm = document.getElementById('edit-form');
-            const title = document.getElementById('title');
-            const description = document.getElementById('description');
-            const status = document.getElementById('status');
 
             editButtons.forEach(button => {
                 button.addEventListener('click', function() {
-                    // Retrieve task data from data attributes
                     const taskId = this.getAttribute('data-task-id');
                     const taskTitle = this.getAttribute('data-task-title');
                     const taskDescription = this.getAttribute('data-task-description');
                     const taskStatus = this.getAttribute('data-task-status');
 
-                    // Set modal form values
-                    title.value = taskTitle || '';
-                    description.value = taskDescription || '';
-                    status.value = taskStatus || 'Pending'; // Default status if none is provided
-
-                    // Update form action to include task ID
-                    editForm.action = `/tasks/${taskId}`; // Update with your route structure
+                    editForm.action = `/tasks/${taskId}`;
+                    editForm.querySelector('#title').value = taskTitle;
+                    editForm.querySelector('#description').value = taskDescription;
+                    editForm.querySelector('#status').value = taskStatus;
                 });
             });
         });

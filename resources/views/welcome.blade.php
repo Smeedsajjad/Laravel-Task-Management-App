@@ -48,7 +48,7 @@
             line-height: 1em;
         }
     </style>
-    <title>TaskFlow</title>
+    <title>TaskFlux</title>
 </head>
 
 <body>
@@ -277,9 +277,9 @@
         </section>
 
 
-    <x-footer />
 
     </main>
+        <x-footer />
     <script>
         AOS.init({
             duration: 1000, // Animation duration (in ms)

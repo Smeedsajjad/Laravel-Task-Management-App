@@ -1,14 +1,20 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 /* *{
     font-family: "Roboto", serif;
 } */
-#logo{
+#logo {
     font-family: "Playwrite IS", serif;
 }
+
 #inverse-rounded-edge {
     aspect-ratio: 8/4;
 
     clip-path: ellipse(85% 100% at 50% 100%);
-  }
+}
+
+.mylogo{
+    font-family: "Permanent Marker", serif;
+}
